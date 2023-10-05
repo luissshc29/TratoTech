@@ -1,0 +1,101 @@
+@import 'styles/breakpoints';
+
+@keyframes link_hover {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.nav {
+    align-items: center;
+    background-image: url('../../assets/fundo.png');
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-areas: 'logo links busca icones';
+    height: 100px;
+    padding: 0 120px;
+    width: 100vw;
+    z-index: 1;
+
+    @media(max-width: $tablet) {
+        grid-template-areas:
+            'logo logo'
+            'links icones'
+            'busca busca';
+        grid-template-columns: 6fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        height: 200px;
+        justify-items: center;
+    }
+
+    @media(max-width: $mobile-sm) {
+        padding: 0 50px;
+    }
+}
+
+.logo {
+    cursor: pointer;
+    grid-area: logo;
+}
+
+.links {
+    grid-area: links;
+    display: flex;
+    justify-self: center;
+    gap: 20px;
+
+    @media(max-width: $tablet) {
+        justify-self: start;
+    }
+
+    .link {
+        color: white;
+        text-decoration: none;
+        font-size: 22px;
+        line-height: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        &:hover {
+            &::after {
+                content: '';
+                display: inline-block;
+                width: 100%;
+                border-bottom: 2px solid white;
+                animation: link_hover .4s;
+            }
+        }
+
+    }
+}
+
+
+.busca {
+    align-items: center;
+    display: flex;
+    grid-area: busca;
+    width: 100%;
+}
+
+.selected {
+    font-weight: bold;
+    
+    &::after {
+        content: '';
+        display: inline-block;
+        width: 100%;
+        border-bottom: 2px solid white;
+        animation: link_hover .4s;
+    }
+}
+
+.icones {
+    display: flex;
+    gap: 20px;
+    grid-area: icones;
+    margin-left: 30px;
+}

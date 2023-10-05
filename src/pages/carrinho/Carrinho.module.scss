@@ -1,0 +1,25 @@
+.carrinho {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+    margin: 2em;
+  }
+  
+  .total {
+    background-color: #EFF9FF;
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    padding: 16px;
+    width: 100%;
+  }
+  
+  .finalizar {
+    background-color: #041833;
+    border-radius: 36px;
+    width: 20%;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 20px 50px;
+  }
